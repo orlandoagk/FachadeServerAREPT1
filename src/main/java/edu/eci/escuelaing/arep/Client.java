@@ -9,7 +9,7 @@ public class Client {
     public static void main(String[] args) {
         HttpResponse<String> response = null;
         try {
-            response = Unirest.get("https://fachadeserver-orlando.herokuapp.com/calculator?operation=sin&number=0.785398")
+            response = Unirest.get("https://fachadeserver-orlando.herokuapp.com/API/calculator?operation=sin&number=0.785398")
                     .asString();
         } catch (UnirestException e) {
             e.printStackTrace();
