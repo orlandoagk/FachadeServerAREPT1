@@ -10,6 +10,13 @@ public class Main {
     public static void main(String[] args) {
         port(getPort());
         get("/",(req,res)->inputDataPage(req,res));
+        get("/API/calculator",(req,res)->{
+            String operation = req.queryParams("operation");
+            String number = req.queryParams("number");
+            JSONObject jsonObject = new JSONObject(HttpRequest.get(operation,number));
+            return jsonObject;
+        });
+
         get("/results",(req,res)->{
             String operation = req.queryParams("operation");
             String number = req.queryParams("number");
